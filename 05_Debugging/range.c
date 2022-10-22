@@ -10,16 +10,22 @@ int main(int argc, char** argv) {
             break;
         case 4:
             S = atoi(argv[3]);
-            // no break
+            M = atoi(argv[1]);
+            N = atoi(argv[2]);
+            break;
         case 3:
-            M = atoi(argv[2]);
-            // no break
+            M = atoi(argv[1]);
+            N = atoi(argv[2]);
+            break;
         case 2:
             N = atoi(argv[1]);
-            for (int i = M; i < N; i += S) {
-                printf("%d\n", i);
-            }
+            break;
         default:
             break;
+    }
+    int j = 0;
+    for (int i = M; i < N; i += S) {
+        j += 1;
+        printf("%d\n", i);
     }
 }
