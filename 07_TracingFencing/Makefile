@@ -24,3 +24,9 @@ test:
 
 	echo $TEST_CONTENT_1 > input_protected.txt
 	LD_PRELOAD=`pwd`/remove.so ./move input_protected.txt out.txt
+
+	echo $TEST_CONTENT_1 > input.txt
+	strace -eread -efault=read:error=EPERM ./move input.txt out.txt 2> error.txt
+	touch error.txt
+	cmp error.txt true_error.txt_
+	touch input.txt
