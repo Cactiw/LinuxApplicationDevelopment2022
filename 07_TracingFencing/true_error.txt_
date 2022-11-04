@@ -1,0 +1,3 @@
+read(3, 0x7fff0d113ab8, 832)            = -1 EPERM (Operation not permitted) (INJECTED)
+./move: error while loading shared libraries: /lib/x86_64-linux-gnu/libc.so.6: cannot read file data: Operation not permitted
++++ exited with 127 +++
