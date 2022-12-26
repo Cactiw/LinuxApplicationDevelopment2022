@@ -14,6 +14,10 @@ enum {
 };
 
 int main() {
+    bindtextdomain("guess", getenv("PWD"));
+    setlocale(LC_ALL, "");
+    textdomain("guess");
+
     char* answer = NULL;
     int guess;
 
@@ -35,5 +39,5 @@ int main() {
             }
         }
     }
-    printf(_("Your number is %d\n"), l_border);
+    printf(_("Your number is %d\n"), r_border);
 }

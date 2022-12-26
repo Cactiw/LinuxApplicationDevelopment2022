@@ -1,0 +1,41 @@
+# English translations for 09_I18N package.
+# Copyright (C) 2022 Knyazev Andrew
+# This file is distributed under the same license as the 09_I18N package.
+# root <root@vmi1063708.contaboserver.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 09_I18N \n"
+"Report-Msgid-Bugs-To: knyazev1514@gmail.com\n"
+"POT-Creation-Date: 2022-12-26 22:35+0300\n"
+"PO-Revision-Date: 2022-12-26 21:29+0300\n"
+"Last-Translator: root <root@vmi1063708.contaboserver.net>\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: guess.c:27
+#, c-format
+msgid "Is your number greater than %d? (y/n) "
+msgstr "Is your number greater than %d? (y/n) "
+
+#: guess.c:30
+msgid "y"
+msgstr "y"
+
+#: guess.c:33
+msgid "n"
+msgstr "n"
+
+#: guess.c:37
+#, c-format
+msgid "Invalid answer\n"
+msgstr "Invalid answer\n"
+
+#: guess.c:42
+#, c-format
+msgid "Your number is %d\n"
+msgstr "Your number is %d\n"
