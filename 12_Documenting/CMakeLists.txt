@@ -36,6 +36,19 @@ add_custom_target(
         COMMAND ${CMAKE_COMMAND} -E copy
         ${CMAKE_SOURCE_DIR}/po/ru_RU.UTF-8/guess.gmo
         ${CMAKE_CURRENT_BINARY_DIR}/ru_RU.UTF-8/LC_MESSAGES/guess.mo
+
+        COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_SOURCE_DIR}/Doxyfile.in
+        ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile.in
+
+        COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_SOURCE_DIR}/guess.c
+        ${CMAKE_CURRENT_BINARY_DIR}/guess.c
+)
+
+add_custom_target(
+        generate-docs
+        COMMAND doxygen Doxyfile.in
 )
 
 add_custom_target(
