@@ -1,4 +1,6 @@
-
+/*
+ * @file This is the only file for this project
+ */
 #include <libgen.h>
 #include <locale.h>
 #include <stdlib.h>
@@ -14,6 +16,9 @@ enum {
 };
 
 
+/*
+ * Translate the given char into roman numerals.
+*/
 int roman_to_integer(char c)
 {
     switch(c) {
@@ -36,6 +41,9 @@ int roman_to_integer(char c)
     }
 }
 
+/*
+ * Translate the given roman numeral into an integer.
+*/
 int roman_to_int (char *s)
 {
     int i, int_num = roman_to_integer(s[0]);
@@ -52,6 +60,9 @@ int roman_to_int (char *s)
     return int_num;
 }
 
+/*
+ * Translate the given integer into roman numerals.
+*/
 char* int_to_roman(int num)
 {
     char *roman = malloc(16);
@@ -119,6 +130,9 @@ char* int_to_roman(int num)
     return roman;
 }
 
+/*
+ * Return N if not use_roman, otherwise return the roman numeral for N.
+*/
 char* get_number(int n, int use_roman) {
     char *number = malloc(16);
     if (use_roman) {
@@ -129,6 +143,9 @@ char* get_number(int n, int use_roman) {
     return number;
 }
 
+/*
+ * Main guess function.
+*/
 int main(int argc, char **argv) {
     bindtextdomain("guess", getenv("PWD"));
     setlocale(LC_ALL, "");
@@ -137,7 +154,7 @@ int main(int argc, char **argv) {
     int use_roman = 0;
     if (argc > 1) {
         if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
-            printf(_("Usage: %s [number]"));
+            printf(_("Simple program that guesses your number.\nOptions: -h, --help, -r, --roman\n\n-r: use roman numerals\n -h: show this help\n"));
         } else if (strcmp(argv[1], "-r") == 0) {
             use_roman = 1;
         }
