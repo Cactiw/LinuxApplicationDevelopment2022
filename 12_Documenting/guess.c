@@ -16,9 +16,12 @@ enum {
 };
 
 
-/*
- * Translate the given char into roman numerals.
-*/
+
+/** Translate the given char into roman numerals.
+ *
+ * @param c - the char to translate
+ * @return the roman numeral
+ */
 int roman_to_integer(char c)
 {
     switch(c) {
@@ -41,9 +44,11 @@ int roman_to_integer(char c)
     }
 }
 
-/*
- * Translate the given roman numeral into an integer.
-*/
+/** A function that translate the given roman numeral into an integer.
+ *
+ * @param s - String to convert
+ * @return the integer
+ */
 int roman_to_int (char *s)
 {
     int i, int_num = roman_to_integer(s[0]);
@@ -60,9 +65,11 @@ int roman_to_int (char *s)
     return int_num;
 }
 
-/*
- * Translate the given integer into roman numerals.
-*/
+/** Translate the given integer into roman numerals.
+ *
+ * @param num - the integer to translate
+ * @return char* - the roman numeral
+ */
 char* int_to_roman(int num)
 {
     char *roman = malloc(16);
@@ -130,9 +137,12 @@ char* int_to_roman(int num)
     return roman;
 }
 
-/*
- * Return N if not use_roman, otherwise return the roman numeral for N.
-*/
+/** Return N if not use_roman, otherwise return the roman numeral for N.
+ *
+ * @param n - the integer to translate
+ * @param use_roman - if true, translate to roman numeral
+ * @return char* - the numeral
+ */
 char* get_number(int n, int use_roman) {
     char *number = malloc(16);
     if (use_roman) {
@@ -143,9 +153,9 @@ char* get_number(int n, int use_roman) {
     return number;
 }
 
-/*
- * Main guess function.
-*/
+/** Main guess function.
+ *
+ */
 int main(int argc, char **argv) {
     bindtextdomain("guess", getenv("PWD"));
     setlocale(LC_ALL, "");
