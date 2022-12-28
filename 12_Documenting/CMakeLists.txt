@@ -48,10 +48,15 @@ add_custom_target(
 
 add_custom_target(
         generate-docs
-        COMMAND doxygen Doxyfile.in
+        COMMAND doxygen ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile.in
 )
 
 add_custom_target(
         clean-generates
         COMMAND rm -rf *.pot I18n CMakeCache.txt CMakeFiles cmake_install.cmake Makefile
+)
+
+add_custom_target(
+        man-generate
+        COMMAND help2man --no-info --output=guess.man --name=guess ${CMAKE_CURRENT_BINARY_DIR}/09_I18N
 )

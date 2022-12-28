@@ -163,12 +163,22 @@ int main(int argc, char **argv) {
 
     int use_roman = 0;
     if (argc > 1) {
-        if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
-            printf(_("Simple program that guesses your number.\nOptions: -h, --help, -r, --roman\n\n-r: use roman numerals\n -h: show this help\n"));
+        if (strcmp(argv[1], "--help") == 0) {
+            printf(_("Usage: %s [options]\n"), argv[0]);
+            printf(_("Options:\n"));
+            printf(_("  -r\t\tUse roman numbers\n"));
+            printf(_("  --help\t\tPrint this help message\n"));
+            printf(_("  --version\t\tPrint version information\n"));
+            return 0;
+        } else if (strcmp(argv[1], "--version") == 0) {
+
+            printf("%s version %s (built %s %s)\n", argv[0], "1.0", __DATE__, __TIME__);
+            return 0;
         } else if (strcmp(argv[1], "-r") == 0) {
             use_roman = 1;
         }
-}
+
+    }
 
     char* answer = NULL;
     int guess;
